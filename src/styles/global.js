@@ -19,6 +19,7 @@ export default createGlobalStyle`
   }
   body, input, button {
     font: 14px 'Roboto', sans-serif;
+    background: unset;
   }
   a {
     text-decoration: none;
