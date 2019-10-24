@@ -13,12 +13,20 @@ export const Container = styled.div`
     align-items: center;
 
     button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       width: 172px;
       height: 42px;
       border: 0;
       color: #fff;
       border-radius: 4px;
       background: #f94d6a;
+
+      svg {
+        margin-right: 5px;
+      }
     }
 
     strong {
@@ -34,6 +42,7 @@ export const Container = styled.div`
 
 export const Meetup = styled.li`
   padding: 20px;
+  margin: 10px 0;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.1);
 
@@ -44,12 +53,18 @@ export const Meetup = styled.li`
   strong {
     color: ${props => (props.available ? '#999' : '#fff')};
     font-size: 18px;
-    line-height: 2.4;
+    line-height: 24px;
   }
 
   span {
+    display: flex;
+    align-items: center;
     font-size: 16px;
     line-height: 1.8;
     color: ${props => (props.available ? '#999' : '#fff')};
+
+    svg {
+      margin-left: 25px;
+    }
   }
 `
