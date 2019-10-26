@@ -1,9 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Form, Input } from '@rocketseat/unform'
+import { Input } from '@rocketseat/unform'
 import * as Yup from 'yup'
 
+import Form from '~/components/Form'
+import Button from '~/components/Button'
 import { signUpRequest } from '~/store/modules/auth/actions'
 
 import logo from '~/assets/images/logo.svg'
@@ -37,7 +39,9 @@ export default function SignUp() {
           placeholder="Sua senha secreta"
         />
 
-        <button type="submit">Criar conta</button>
+        <Button color="#f94d6a" type="submit">
+          Criar conta
+        </Button>
         <Link to="/">Já tenho Login</Link>
       </Form>
     </>

@@ -1,46 +1,45 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  max-width: 940px;
-  margin: 50px auto;
-
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 
-  header {
+  img {
+    width: 940px;
+    height: 300px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 32px;
+    color: #fff;
+    margin-top: 15px;
+  }
+
+  div {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 20px;
 
-    button {
+    span {
       display: flex;
-      justify-content: center;
       align-items: center;
-
-      width: 172px;
-      height: 42px;
-      border: 0;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 18px;
       color: #fff;
-      border-radius: 4px;
-      background: #f94d6a;
+      opacity: 0.6;
 
       svg {
-        margin-right: 5px;
+        margin-right: 10px;
       }
     }
-
-    strong {
-      color: #fff;
-      font-size: 32px;
+    span + span {
+      margin-left: 30px;
     }
   }
-
-  ul {
-    margin-top: 30px;
-  }
 `
-
-export const Meetup = styled.li`
+export const MeetupItem = styled.li`
   padding: 20px;
   margin: 10px 0;
   border-radius: 4px;
@@ -49,6 +48,7 @@ export const Meetup = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  cursor: pointer;
 
   strong {
     color: ${props => (props.available ? '#999' : '#fff')};

@@ -16,20 +16,13 @@ export function* signIn({ payload }) {
     })
 
     const { token, user } = response.data
-    console.tron.log(response)
-
-    if (!user.provider) {
-      toast.error('Usuário não é prestador')
-      return
-    }
-
     /*
      ** Enviar o token em todas as requisições
      */
     api.defaults.headers.Authorization = `Bearer ${token}`
 
     yield put(signInSuccess(token, user))
-    history.push('dashboard')
+    history.push('meetups')
   } catch (error) {
     toast.error('Falha na autenticação, verifique seus dados')
     yield put(signFailure())

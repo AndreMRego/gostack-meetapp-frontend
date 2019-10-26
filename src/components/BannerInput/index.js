@@ -5,20 +5,20 @@ import api from '~/services/api'
 
 import { Container } from './styles'
 
-export default function BannerInput({ name }) {
+export default function BannerInput() {
   const ref = useRef(null)
-  const { fieldName, registerField, defaultValue, error } = useField(name)
+  const { registerField, defaultValue, error } = useField('banner')
 
   const [file, setFile] = useState(defaultValue && defaultValue.id)
   const [preview, setPreview] = useState(defaultValue && defaultValue.url)
 
   useEffect(() => {
     registerField({
-      name: fieldName,
+      name: 'banner_id',
       ref: ref.current,
       path: 'dataset.file',
     })
-  }, [ref.current, fieldName]); // eslint-disable-line
+  }, [ref.current]); // eslint-disable-line
 
 
   async function handleChange(e) {
@@ -39,7 +39,7 @@ export default function BannerInput({ name }) {
         {preview && <img src={preview} alt={file.name} />}
         {!preview && (
           <>
-            <MdPhotoCamera color="#FFF" size={54} />
+            <MdPhotoCamera opacity={0.3} color="#FFF" size={54} />
             <span>Selecionar imagem</span>
           </>
         )}

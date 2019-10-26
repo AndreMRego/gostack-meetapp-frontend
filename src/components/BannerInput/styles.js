@@ -21,6 +21,7 @@ export const Container = styled.div`
 
     span {
       color: #fff;
+      opacity: 0.3;
     }
 
     &:hover {
